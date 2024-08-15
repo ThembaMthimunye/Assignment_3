@@ -142,9 +142,9 @@ const AddContent = ({ addContentSubmit }) => {
                 onChange={(e) => setTitle(e.target.value)} type="text" id="name" name="name" class="w-[317px] px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></input>
             </div>
             <div class="mb-4">
-              <label for="email" class="block text-gray-700 font-medium mb-2">Description </label>
+              <label for="" class="block text-gray-700 font-medium mb-2">Description </label>
               <input value={description}
-                onChange={(e) => setDescription(e.target.value)} type="email" id="email" name="email" class="w-[317px] px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></input>
+                onChange={(e) => setDescription(e.target.value)} type="" id="" name="" class="w-[317px] px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></input>
             </div>
             <div class="mb-4">
               <label for="message" class="block text-gray-700 font-medium mb-2">Country </label>
@@ -152,9 +152,9 @@ const AddContent = ({ addContentSubmit }) => {
                 onChange={(e) => setCountry(e.target.value)} id="message" name="message" rows="4" class="w-[317px] px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
             </div>
             <div class="mb-4">
-              <label for="email" class="block text-gray-700 font-medium mb-2">Year</label>
+              <label for="" class="block text-gray-700 font-medium mb-2">Year</label>
               <input value={year}
-                onChange={(e) => setYear(e.target.value)} type="email" id="email" name="email" class="w-[317px] px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></input>
+                onChange={(e) => setYear(e.target.value)} type="" id="" name="" class="w-[317px] px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></input>
             </div>
             <div class="mb-4">
               <label for="subject" class="block text-gray-700 font-medium mb-2">Genre</label>

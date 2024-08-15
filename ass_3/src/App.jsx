@@ -41,7 +41,7 @@ const deleteContent=async (id)=>{
             <Route path="/Movies" element={<Movies/>}/>
             <Route path="/Series" element={<Series/>}/> 
             {/* <Route path="/Details"element={<Details/>}/> */}
-             <Route path="/Details/:idPic"element={<Details deleteContent={deleteContent}/>} /> 
+             <Route path="/Details/:idPic"element={<Details deleteContent={deleteContent} />} /> 
             <Route path="/AddContent"element={<AddContent addContentSubmit={addContent}/>}/>
         </Routes>
       </BrowserRouter> 

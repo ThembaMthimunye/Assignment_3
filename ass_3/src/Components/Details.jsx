@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './navbar'
 import { useState, useEffect } from 'react'
-import { useParams,useNavigate } from 'react-router-dom'
+import { useParams,useNavigate,useLoaderData } from 'react-router-dom'
 
 
  const Details = ({deleteContent}) => {
@@ -73,7 +73,12 @@ import { useParams,useNavigate } from 'react-router-dom'
     )
 
 
+    const loader=async({params})=>{
+        const res=await fetch (`/api/jobs/${params.id}`);
+        const data=await res.json();
+        return data
 
+    }
 };
 
 export default Details

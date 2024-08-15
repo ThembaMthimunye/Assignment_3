@@ -18,6 +18,53 @@ const Movies = () => {
       navigate(`/AddContent`)
     )
   };
+  //////////////////////////////////////////
+  // const [jobs, setJobs] = useState([]);
+  // const [loading, setLoading] = useState(true);
+
+
+  useEffect(() => {
+
+    const fetchJobs = async () => {
+      const api = isHome ? '/api/jobs?_limit=4' : '/api/jobs?_limit';
+      try {
+        const res = await fetch(api);
+        const data = await res.json();
+        setJobs(data);
+      } catch (error) {
+        console.log('Error fetching data', error)
+      } finally {
+
+        setLoading(false);
+      }
+
+    }
+    fetchJobs();
+  }, []);
+
+  // const navigate = useNavigate();
+
+  function goToMovies(idPic) {
+    return (
+      navigate(`/Details/${idPic}`)
+    )
+  }
+
+
+  function goToMoviesPage() {
+    return (
+      navigate(`/Movies`)
+    )
+  }
+
+  function goToSeriesPage(idPic) {
+    return (
+      navigate(`/Series`)
+    )
+  }
+
+
+  
   useEffect(() => {
 
     const fetchJobs = async () => {
@@ -53,8 +100,13 @@ const Movies = () => {
               jobs.map((Images) => {
                 return (
 
-                  <div className='images_container'>
-                    <a href="">
+                  <div >
+                    <a href="" onClick={
+                      (e) => {
+                        e.preventDefault();
+                        goToMovies(Images.id)
+                      }
+                    }>
                       <img class="w-[70%] aspect-[1/1] border m-8 rounded-[3px] border-solid border-[black]" src={Images.image} alt="" />
                     </a>
                   </div>
