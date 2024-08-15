@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 *{
   padding:0;
   margin:0;
@@ -136,9 +141,9 @@ h1{
 }
 
 .movie-pic{
-  height:20rem;
-  width:12rem;
-  margin-left:30rem;
+  height:30rem;
+  width:20rem;
+  margin-left:35rem;
   margin-top:5rem;
   
 }
@@ -150,7 +155,7 @@ h1{
 }
 .about-content{
   padding-left:2rem;
-  padding-right:30rem;
+  padding-right:20rem;
 }
 .details{
   margin-left:2rem;
@@ -159,15 +164,15 @@ h1{
 .btm-btn{
 border:1px solid #7379FF;
 border-radius:10rem;
-width:4rem;
-height:1.5rem;
+width:5rem;
+height:1.8rem;
 background:#7379FF;
 color: white;
 display: inline-block;
 margin-left:1rem
 }
 .btn{
-  margin-top:-4rem;
-  margin-left:43rem;
+  margin-top:-2rem;
+  margin-left:60rem;
   
 }

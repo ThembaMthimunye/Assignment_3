@@ -1,63 +1,72 @@
 import React from 'react'
 import Navbar from './navbar'
-import loki from "../assets/images/loki.jpg"
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams,useNavigate } from 'react-router-dom'
 
- const Details = () => {
+
+ const Details = ({deleteContent}) => {
     const {idPic}=useParams();
-    const [job, setJob] = useState(null);
-    const[loading ,setLoading]=useState(true)
+    const [job, setJob] = useState([]);
+    const[loading ,setLoading]=useState(true);
+    const navigate=useNavigate();
     useEffect(() => {
         const fetchJob = async () => {
             
             try {
-                const res = await fetch(`http://localhost:8000/jobs`);
+                const res = await fetch(`/api/jobs/${idPic}`);
                 const data = await res.json();
                 console.log(data);
                 setJob(data);
             } catch (error) {
-                console.log('Error fetching data', error)
+    
             } finally {
-
-                setLoading(true);
+                setLoading(false);
             }
 
 
         };
         fetchJob();
     }, []);
-    return (
-            loading ?  <h3>{idPic}</h3>: <h1>themba</h1>
-        // <div>
-        //     <Navbar title="Dont think about it too much"></Navbar>
-        //      <div className='Content-container'>
-        //         <div className='image-section'>
-        //             <img className="movie-pic" src={loki} alt="" />
-        //         </div>
-        //         <div className='content-infor'>
-        //             <div className='content'>
-        //                 <h2 className='content-title'>
-        //                     {job.id} 
-        //                 </h2>
-        //                 <h3 className='about-content'>
-        //                      {job.id} 
-        //                 </h3>
-        //                 <div className='details'>
-        //                     <p>Country:{ }</p>
-        //                     <p>Genre:{ }</p>
-        //                     <p>Year:{ }</p>
-        //                     <p>Type:{ }</p>
-        //                 </div>
-        //             </div>
-        //         </div> 
+    const onDeleteClick=(jobId)=>{
+        const confirm =window.confirm('Are you sure');
+        if (!confirm) return;
+        deleteContent(jobId);
+        navigate('/Movies');
 
-        //     </div> 
-        //     <div className='btn'>
-        //         <button className='btm-btn'>EDIT</button>
-        //         <button className='btm-btn'>DELETE</button>
-        //     </div>
-        // </div>
+    }
+    return  (
+         <>
+        
+         <div>
+              <Navbar title={job.title}></Navbar> 
+              <div class='flex'key={job.id}>
+                 <div class='mb-[-10rem]'>
+                     <img class="h-[30rem] w-80 ml-[30rem] mt-[10rem]" src={job.image} alt="" />
+                 </div>
+                 <div class=''>
+                     <div className='content'>
+                         <h1 class="text-4xl font-bold text-gray-800 font-sans-serif text-center mt-[8rem]" >
+                         {job.title}
+                         </h1>
+                         <h3 class="pl-[25rem] pr-[25rem] pt-[3rem]" >
+                              {job.description}
+                         </h3>
+                          <div class='ml-[25rem] mt-[2rem]'>
+                             <p>Country:{job.country }</p>
+                             <p>Genre:{job.genre }</p>
+                             <p>Year:{ job.year}</p>
+                             <p>Type:{ job.type}</p>
+                         </div> 
+                     </div>
+                 </div> 
+
+             </div> 
+             <div class='mt-[1rem]'>
+                 <button class='px-4 py-2 bg-[#7379FF] text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 ml-[55rem]'>EDIT</button>
+                 <button class='px-4 py-2 bg-[#7379FF] text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 ml-[2rem]' onClick={()=>onDeleteClick(job.id)}>DELETE</button>
+             </div>
+         </div>
+         </>
 
 
 
@@ -65,6 +74,6 @@ import { useParams } from 'react-router-dom'
 
 
 
-}
+};
 
 export default Details
