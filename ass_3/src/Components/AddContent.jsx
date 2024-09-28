@@ -71,27 +71,27 @@ const AddContent = ({ addContentSubmit }) => {
 
           <div className=' mt-[3rem]'>
             <div className="mb-4">
-              <label for="name" className="block text-gray-700 font-medium mb-2">Movie/ Series name </label>
+              <label  className="block text-gray-700 font-medium mb-2">Movie/ Series name </label>
               <input value={title}
                 onChange={(e) => setTitle(e.target.value)} type="text" id="name" name="name" className="w-[317px] px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></input>
             </div>
             <div className="mb-4">
-              <label for="" className="block text-gray-700 font-medium mb-2">Description </label>
+              <label  className="block text-gray-700 font-medium mb-2">Description </label>
               <input value={description}
                 onChange={(e) => setDescription(e.target.value)} type="" id="" name="" className="w-[317px] px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></input>
             </div>
             <div className="mb-4">
-              <label for="message" className="block text-gray-700 font-medium mb-2">Country </label>
+              <label  className="block text-gray-700 font-medium mb-2">Country </label>
               <textarea value={country}
                 onChange={(e) => setCountry(e.target.value)} id="message" name="message" rows="4" className="w-[317px] px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
             </div>
             <div className="mb-4">
-              <label for="" className="block text-gray-700 font-medium mb-2">Year</label>
+              <label  className="block text-gray-700 font-medium mb-2">Year</label>
               <input value={year}
                 onChange={(e) => setYear(e.target.value)} type="" id="" name="" className="w-[317px] px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></input>
             </div>
             <div className="mb-4">
-              <label for="subject" className="block text-gray-700 font-medium mb-2">Genre</label>
+              <label  className="block text-gray-700 font-medium mb-2">Genre</label>
               <select value={genre}
                 onChange={(e) => setGenre(e.target.value)} id="subject" name="subject" className="w-[317px] px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <option value="general">Movie</option>
