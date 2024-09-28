@@ -65,7 +65,7 @@ const Home = () => {
                     }}
                   >
                     <img
-                      className="w-[70%] aspect-[1/1] border m-8 rounded-[3px] border-solid border-[black] hover:scale-110"
+                      className="w-[70%] aspect-[1/1] border m-8 rounded-[3px] border-solid border-[black] hover:scale-110 duration-300"
                       src={Images.image}
                       alt=""
                     />
@@ -103,7 +103,7 @@ const Home = () => {
                   }}
                 >
                   <img
-                    className="w-[70%] aspect-[1/1] border m-8 rounded-[3px] border-solid border-[black] hover:scale-110"
+                    className="w-[70%] aspect-[1/1] border m-8 rounded-[3px] border-solid border-[black] hover:scale-110 duration-300"
                     src={Images.image}
                     alt=""
                   />
